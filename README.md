@@ -1,12 +1,14 @@
 Voice Engine
 ============
 
-[![Build Status](https://travis-ci.org/voice-engine/voice-engine.svg?branch=master)](https://travis-ci.org/voice-engine/voice-engine)
-[![](https://img.shields.io/pypi/v/voice-engine.svg)](https://pypi.python.org/pypi/voice-engine)
+[![Build Status](http://travis-ci.org/mramshaw/voice-engine.svg?branch=master)](http://travis-ci.org/mramshaw/voice-engine)
+[![](http://img.shields.io/pypi/v/voice-engine.svg)](http://pypi.python.org/pypi/voice-engine)
 
 
 The library is used to create voice interface applications.
-It includes building blocks such as KWS (keyword spotting), DOA (Direction Of Arrival). There are also elements to measure RMS (dBFS or dB(A)).
+It includes building blocks such as KWS ([keyword spotting](http://en.wikipedia.org/wiki/Keyword_spotting))
+ and DOA ([Direction Of Arrival](http://en.wikipedia.org/wiki/Direction_of_arrival)). There are also elements
+ to measure [RMS amplitude](http://en.wikipedia.org/wiki/RMS_amplitude) (dBFS or dB(A)).
 
 
 ### Requirements
@@ -61,7 +63,12 @@ while True:
 kws.stop()
 src.stop()
 ```
-    
+
+### Teardown
+Deactivate the virtual environment as follows:
+
+    deactivate
+
 ### Building blocks
 The library uses gstreamer-like [elements](voice_engine/element.py) which can be linked together as an audio pipeline.
 One element can connect to more than one other elements.
@@ -71,6 +78,6 @@ The topology can be:
 Source --> ChannelPicker --> KWS          Source --> ChannelPicker --> KWS --> Alexa
   |                          /\
   V                        /   \
- DOA                   Alexa   Google Asissitant 
+ DOA                   Alexa   Google Assistant 
   
 ```
